@@ -1,79 +1,70 @@
 package br.com.emprestalivro.emprestimo;
 
-import br.com.emprestalivro.livros.Livros;
+import br.com.emprestalivro.livros.Livro;
 import br.com.emprestalivro.usuario.Usuario;
 
 
 public class Emprestimo {
-    private int codSolicitacao;
-    private Usuario usuarioSolicitante;
-    private Livros livroEmprestado;
-    private String dataSolicitacao;
-    private String dataDevolução;
 
-    public Emprestimo(int codSolicitacao, Usuario usuarioSolicitante, Livros livroEmprestado,
-                      String dataSolicitacao, String dataDevolução) {
+    private Long codigo;
+    private Usuario usuario;
+    private Livro livro;
+    private String dataEmprestimo;
+    private String dataDevolucao;
 
-        this.codSolicitacao = codSolicitacao;
-        this.usuarioSolicitante = usuarioSolicitante;
-        this.livroEmprestado = livroEmprestado;
-        this.dataSolicitacao = dataSolicitacao;
-        this.dataDevolução = dataDevolução;
+    public Emprestimo(Long codigo, Usuario usuario, Livro livro, String dataEmprestimo, String dataDevolucao) {
+        this.codigo = codigo;
+        this.usuario = usuario;
+        this.livro = livro;
+        this.dataEmprestimo = dataEmprestimo;
+        this.dataDevolucao = dataDevolucao;
     }
 
-    public int getCodSolicitacao() {
-        return codSolicitacao;
+    public Long getCodigo() {
+        return codigo;
     }
 
-    public void setCodSolicitacao(int codSolicitacao) {
-        this.codSolicitacao = codSolicitacao;
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 
-    public Usuario getUsuarioSolicitante() {
-        return usuarioSolicitante;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioSolicitante(Usuario usuarioSolicitante) {
-        this.usuarioSolicitante = usuarioSolicitante;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public Livros getLivroEmprestado() {
-        return livroEmprestado;
+    public Livro getLivro() {
+        return livro;
     }
 
-    public void setLivroEmprestado(Livros livroEmprestado) {
-        this.livroEmprestado = livroEmprestado;
+    public void setLivro(Livro livro) {
+        this.livro = livro;
     }
 
-    public String getDataSolicitacao() {
-        return dataSolicitacao;
+    public String getDataEmprestimo() {
+        return dataEmprestimo;
     }
 
-    public void setDataSolicitacao(String dataSolicitacao) {
-        this.dataSolicitacao = dataSolicitacao;
+    public void setDataEmprestimo(String dataEmprestimo) {
+        this.dataEmprestimo = dataEmprestimo;
     }
 
-    public String getDataDevolução() {
-        return dataDevolução;
+    public String getDataDevolucao() {
+        return dataDevolucao;
     }
 
-    public void setDataDevolução(String dataDevolução) {
-        this.dataDevolução = dataDevolução;
+    public void setDataDevolucao(String dataDevolucao) {
+        this.dataDevolucao = dataDevolucao;
     }
 
-    @Override
-    public String toString() {
-        return "Emprestimo{" +
-                "codSolicitacao=" + codSolicitacao +
-                ", usuarioSolicitante=" + usuarioSolicitante +
-                ", livroEmprestado=" + livroEmprestado +
-                ", dataSolicitacao=" + dataSolicitacao +
-                ", dataDevolução=" + dataDevolução +
-                '}';
-    }
-    public void imprimeDadosEmprestimo(){
-        System.out.println("Codigo Emprestimo" + getCodSolicitacao());
+    public void imprimeEmprestimo(){
+        System.out.println("Código: " + this.getCodigo());
+        System.out.println("Usuário: " + this.getUsuario().getNomeCompleto());
+        System.out.println("Livro:" + this.getLivro().getNome());
+        System.out.println("Data do empréstimo:" + this.getDataEmprestimo());
+        System.out.println("Data da devolução:" + this.getDataDevolucao());
     }
 }
-
-
