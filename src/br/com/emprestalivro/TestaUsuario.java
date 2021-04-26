@@ -64,9 +64,7 @@ public class TestaUsuario {
 
             }
         }
-
         Emprestimo emprestimo1 = new Emprestimo(1L, usuario, livro, dataEmprestimo, dataDevolucao);
         emprestimo.imprimeEmprestimo();
     }
-
 }

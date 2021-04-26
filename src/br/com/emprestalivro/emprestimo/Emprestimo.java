@@ -3,7 +3,6 @@ package br.com.emprestalivro.emprestimo;
 import br.com.emprestalivro.livros.Livro;
 import br.com.emprestalivro.usuario.Usuario;
 
-
 public class Emprestimo {
 
     private Long codigo;
@@ -60,7 +59,7 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public void imprimeEmprestimo(){
+    public void imprimeEmprestimo() {
         System.out.println("Código: " + this.getCodigo());
         System.out.println("Usuário: " + this.getUsuario().getNomeCompleto());
         System.out.println("Livro:" + this.getLivro().getNome());
